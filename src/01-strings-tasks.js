@@ -1,45 +1,12 @@
-/* *******************************************************************************************
- *                                                                                           *
- * Please read the following tutorial before implementing tasks:                              *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
- *                                                                                           *
- ******************************************************************************************* */
-
-
-/**
- * Returns the result of concatenation of two strings.
- *
- * @param {string} value1
- * @param {string} value2
- * @return {string}
- *
- * @example
- *   'aa', 'bb' => 'aabb'
- *   'aa',''    => 'aa'
- *   '',  'bb'  => 'bb'
- */
 function concatenateStrings(value1, value2) {
  return (value1 + value2);
 }
 
-
-/**
- * Returns the length of given string.
- *
- * @param {string} value
- * @return {number}
- *
- * @example
- *   'aaaaa' => 5
- *   'b'     => 1
- *   ''      => 0
- */
 function getStringLength(value) {
   return value.length;
 }
 
-/**
- * Returns the result of string template and given parameters firstName and lastName.
+/* Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings
  *
@@ -55,8 +22,7 @@ function getStringFromTemplate(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`;
 }
 
-/**
- * Extracts a name from template string 'Hello, First_Name Last_Name!'.
+/* Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
  * @param {string} value
  * @return {string}
@@ -70,8 +36,7 @@ function extractNameFromTemplate(value) {
 }
 
 
-/**
- * Returns a first char of the given string.
+/* Returns a first char of the given string.
  *
  * @param {string} value
  * @return {string}
@@ -84,8 +49,7 @@ function getFirstChar(value) {
  return value[0];
 }
 
-/**
- * Removes a leading and trailing whitespace characters from string.
+/* Removes a leading and trailing whitespace characters from string.
  *
  * @param {string} value
  * @return {string}
@@ -99,8 +63,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
 return value.trim();
 }
 
-/**
- * Returns a string that repeated the specified number of times.
+/* Returns a string that repeated the specified number of times.
  *
  * @param {string} value
  * @param {string} count
@@ -114,8 +77,7 @@ function repeatString(value, count) {
   return value.repeat(count);
 }
 
-/**
- * Remove the first occurrence of string inside another string
+/* Remove the first occurrence of string inside another string
  *
  * @param {string} str
  * @param {string} value
@@ -285,7 +247,7 @@ module.exports = {
   convertToUpperCase,
   extractEmails,
   getRectangleString,
-  encodeToRot13,
-  isString,
-  getCardId,
+encodeToRot13,
+isString,
+getCardId,
 };
