@@ -358,8 +358,8 @@ function getItemsSum(arr) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  return arr.filter((el) => !el).length;
 }
 
 /**
@@ -460,8 +460,15 @@ function sortCitiesArray(arr) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const arr = new Array(n);
+  arr.fill(0);
+  return arr.map((el, i) => {
+    const arr2 = new Array(n);
+    arr2.fill(0);
+    arr2[i] = 1;
+    return arr2;
+  });
 }
 
 /**
@@ -477,8 +484,10 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  const arr = new Array(end - start + 1);
+  arr.fill(start);
+  return arr.map((el, i) => el + i);
 }
 
 /**
@@ -525,8 +534,20 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  throw new Error('Not implemented');
+function group(array, keySelector, valueSelector) {
+  const arrkey = array.map(keySelector);
+  const arrval = array.map(valueSelector);
+  const result = new Map();
+  arrkey.filter((el, i) => {
+    if (!result.has(el)) {
+      result.set(el, [arrval[i]]);
+    } else {
+      const val = result.get(el);
+      val.push(arrval[i]);
+      result.set(el, val);
+    } return result;
+  });
+  return result;
 }
 
 
